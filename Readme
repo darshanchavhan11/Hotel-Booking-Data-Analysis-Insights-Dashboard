@@ -1,0 +1,155 @@
+Hotel Booking Analysis – End-to-End BI Project
+Advanced Business Intelligence | Power BI | Data Cleaning | DAX | Insights & Strategy
+
+📌 Project Overview
+
+This project presents a comprehensive analysis of hotel booking performance using advanced EDA, Power BI dashboarding, DAX measures, and business insights.
+
+It aims to help hotel management:
+
+Maximize revenue efficiency
+
+Identify seasonal booking trends
+
+Understand customer behavior
+
+Improve guest retention
+
+Reduce cancellation losses
+
+Optimize room pricing strategy (ADR)
+
+The dashboard transforms raw booking data into actionable insights that support real-time decision-making.
+
+
+🧭 Objectives
+
+✔ Identify trends in bookings, cancellations, and revenue
+✔ Evaluate guest behavior (first-time vs repeat guests)
+✔ Understand market segment contribution
+✔ Forecast demand patterns
+✔ Provide strategic recommendations for business growth
+
+📂 Project Workflow
+1️⃣ Data Understanding
+
+Columns include: booking dates, ADR, market segment, guest counts, cancellation status, stay length, room category, revenue per stay, etc.
+
+2️⃣ Data Cleaning (Excel)
+
+Steps performed:
+
+Removed duplicates
+
+Standardized date formats
+
+Treated missing values
+
+Corrected inconsistent category names
+
+Created new calculated fields (e.g., Revenue per Stay)
+
+Converted text columns into categorical format
+
+Ensured numerical fields were correctly typed
+
+3️⃣ Data Modeling (Power BI)
+
+Star schema-based fact table
+
+Fact table → Bookings
+
+Dimensions → Market Segment, Room Type, Meal, Guest Type
+
+Relationships created using appropriate keys
+
+Model optimized for fast DAX calculation performance
+
+
+4️⃣ DAX Metrics (Core Measures)
+🔹 Total Bookings
+Total Bookings = COUNTROWS('Hotel Bookings (1)')
+
+🔹 Total Revenue
+Total_Revenue = SUM('Hotel Bookings (1)'[Revenue_per_Stay])
+
+🔹 Average ADR
+Average_ADR = AVERAGE('Hotel Bookings (1)'[ADR])
+
+🔹 Repeat Guest Percentage
+Repeat_Guest_Percentage =
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('Hotel Bookings (1)'), 
+        'Hotel Bookings (1)'[is_repeated_guest] = 1
+    ),
+    [Total Bookings]
+)
+
+🔹 Total Guests
+Total_Guests = SUM('Hotel Bookings (1)'[Total_Guest])
+
+
+
+📊 Dashboard Insights
+⭐ 1. Monthly Booking Trends
+
+Identifies peak and low-demand months
+
+Helps forecast staffing & revenue expectations
+
+Provides seasonality insights for planning marketing campaigns
+
+⭐ 2. Revenue Overview
+
+Reveals overall revenue generated
+
+Helps understand which segments & months contribute most
+
+Shows effect of cancellations on revenue leakage
+
+⭐ 3. Revenue by Stay Category
+
+Highlights which room types or stay durations generate maximum revenue
+
+Key to planning pricing strategy & promotional offers
+
+⭐ 4. Cancellation vs Market Segment
+
+Detects segments with high cancellation rates
+
+Helps modify payment policies and target risk-prone segments
+
+Supports improving forecasting accuracy
+
+⭐ 5. Geographic Distribution of Bookings
+
+Shows top-performing regions
+
+Helps target marketing campaigns to high-value locations
+
+
+
+🧩 Business Insights
+
+✔ Repeat guests form a stable high-value customer base
+✔ Weekend stays show higher ADR
+✔ Certain market segments have frequent cancellations → revenue loss
+✔ Families/long stays contribute more revenue per booking
+✔ Geographic clusters show high potential for seasonal campaigns
+
+🚀 Future Scope
+
+Implement forecasting models for demand prediction
+
+Integrate dynamic pricing using ADR + occupancy analytics
+
+Add automated alerts for cancellation spikes
+
+Expand dashboard with YOY trend comparison
+
+Deploy as a Power BI Service dashboard with scheduled refresh
+
+🙌 Author
+
+Darshan Chavhan
