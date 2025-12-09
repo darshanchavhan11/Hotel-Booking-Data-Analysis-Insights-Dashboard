@@ -1,0 +1,2 @@
+# Hotel-Booking-Data-Analysis-Insights-Dashboard
+Hotel Booking Data Analysis &amp; BI Dashboard (AlmaBetter Project). Analyzed $\approx 119K$ booking records using Power BI to uncover revenue drivers, seasonality, and cancellation patterns111111111. Developed DAX KPIs (37% Cancellation Rate, $34.86M Total Revenue) to recommend reducing OTA dependency, optimizing pricing for Long Stays, and enhancing.
